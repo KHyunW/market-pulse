@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <!-- iOS PWA 설정 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="마켓펄스" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <title>마켓펄스 · 오늘의 경제 헤드라인</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/dist/tabler-icons.min.css" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- HERO HEADER -->
+    <header class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-noise"></div>
+
+      <div class="hero-top">
+        <div class="brand">
+          <div class="brand-dot"></div>
+          <div class="brand-text">
+            <div class="brand-label">LIVE</div>
+            <div class="brand-sub">MARKET PULSE</div>
+          </div>
+        </div>
+        <button class="refresh-btn" id="refreshBtn" aria-label="새로고침">
+          <i class="ti ti-refresh"></i>
+        </button>
+      </div>
+
+      <div class="hero-main">
+        <div class="hero-eyebrow">오늘의 경제 헤드라인</div>
+        <h1 class="hero-title">
+          <span class="hero-date" id="heroDate">―</span>
+        </h1>
+        <div class="hero-meta">
+          <span class="meta-item">
+            <i class="ti ti-clock"></i>
+            <span id="cutoffTime">오전 8:40 기준</span>
+          </span>
+          <span class="meta-dot"></span>
+          <span class="meta-item" id="updateTime">―</span>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div class="ticker-track" id="ticker">
+          <span class="ticker-item">실시간 경제 뉴스를 불러오는 중...</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORY TABS -->
+    <nav class="tabs">
+      <button class="tab active" data-query="경제">전체</button>
+      <button class="tab" data-query="증시">증시</button>
+      <button class="tab" data-query="환율">환율</button>
+      <button class="tab" data-query="부동산">부동산</button>
+      <button class="tab" data-query="기업 실적">기업</button>
+      <button class="tab" data-query="글로벌 경제">글로벌</button>
+    </nav>
+
+    <!-- NEWS LIST -->
+    <main class="news-section">
+      <div class="section-head">
+        <div class="section-label">
+          <span class="label-bar"></span>
+          <span id="sectionTitle">TOP HEADLINES</span>
+        </div>
+        <div class="section-count" id="sectionCount">―</div>
+      </div>
+
+      <div class="news-list" id="newsList">
+        <!-- skeleton placeholders 초기 5개 -->
+        <div class="skeleton-item">
+          <div class="skel-row"><div class="skel-pill"></div><div class="skel-text short"></div></div>
+          <div class="skel-text title"></div>
+          <div class="skel-text title2"></div>
+          <div class="skel-text desc"></div>
+        </div>
+        <div class="skeleton-item">
+          <div class="skel-row"><div class="skel-pill"></div><div class="skel-text short"></div></div>
+          <div class="skel-text title"></div>
+          <div class="skel-text title2"></div>
+          <div class="skel-text desc"></div>
+        </div>
+        <div class="skeleton-item">
+          <div class="skel-row"><div class="skel-pill"></div><div class="skel-text short"></div></div>
+          <div class="skel-text title"></div>
+          <div class="skel-text title2"></div>
+          <div class="skel-text desc"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-line">
+        <span>NAVER OPEN API</span>
+        <span class="footer-dot"></span>
+        <span>매일 오전 8:40 마감</span>
+      </div>
+      <div class="footer-brand">MARKET<span>·</span>PULSE</div>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
